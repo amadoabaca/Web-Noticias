@@ -1,0 +1,54 @@
+.calculadora {
+    width: 250px;
+    margin: 100px auto;
+    background-color: rgb(231, 231, 231);
+    padding: 30px;
+    border-radius: 7px;
+  }
+  
+  .pantalla{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pantalla input {
+    text-align: right;
+    margin-bottom: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 90%;
+    height: 30px;
+    font-size: large;
+
+  }
+  
+  .teclado {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .teclado button {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    font-size: 18px;
+  }
+  
+  .teclas-1,
+  .teclas-2,
+  .teclas-3,
+  .teclas-4,
+  .teclas-5 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+.vacio{
+  background-color: rgb(231, 231, 231);
+  border: 0px;
+}
+
+  
