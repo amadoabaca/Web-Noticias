@@ -74,14 +74,12 @@ header {
 .noticias{
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     background-color: rgb(32, 33, 36);
-    height: 900px;
     width: 50%;
     padding: 16px;
     border-radius: 16px;
-    font-size: 14px;
-    
+    font-size: 14px;    
 }
 
 .noticia{
@@ -95,9 +93,7 @@ header {
 .noticia_img{
     width: 30%;
     height: 80%;
-    flex-wrap: wrap;
-   
-   
+    flex-wrap: wrap;   
 }
 .noticia_img img{
     height: auto;

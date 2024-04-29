@@ -14,11 +14,43 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .then(response => response.json())
     .then(data => {
+        const secNoticias = document.querySelector('div.noticias')
+        
         //Aqui es donde cambiamos el contenido del html element
         data.forEach(element => {
-            console.log(element.title);
-            console.log(element.body);
-        });
+            //ELEMENT ES EL CONTENIDO DE LA CONSULTA A LA API
+            //SE PUEDE AGREGAR MAS DATOS COMO USUARIO ETC.
+
+            const noticia = document.createElement('div');
+            noticia.classList.add('noticia');
+
+            const noticiaImg = document.createElement('div');
+            noticiaImg.classList.add('noticia_img');
+
+            const noticiaImgImg = document.createElement('img');
+            noticiaImgImg.src = 'assets/img.png';
+            noticiaImgImg.alt = '';
+
+            noticiaImg.appendChild(noticiaImgImg);
+
+            const noticiaCuerpo = document.createElement('div');
+            noticiaCuerpo.classList.add('noticia_cuerpo');
+
+            const tituloNoticia = document.createElement('h1');
+            tituloNoticia.classList.add('titulo_noticia');
+            tituloNoticia.textContent = element.title;
+
+            const noticiaParrafo = document.createElement('p');
+            noticiaParrafo.textContent = element.body;
+
+            noticiaCuerpo.appendChild(tituloNoticia);
+            noticiaCuerpo.appendChild(noticiaParrafo);
+
+            noticia.appendChild(noticiaImg);
+            noticia.appendChild(noticiaCuerpo);
+            secNoticias.appendChild(noticia);
+        });        
+
     })
     .catch(error => console.error('Error:', error));
     
