@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Componente</title>
+
+    <script>
+        class MiElemento extends HTMLElement{
+            constructor(){
+                super();
+                
+            }
+            
+            static get styles(){
+                return `
+                    <style>
+                    h2 {
+                        color: green;
+                    }
+                    </style>
+                `;
+            }
+
+            connectedCallback(){
+                this.innerHTML = `
+                    ${MiElemento.styles}
+                    <h2>Mi Componente</h2>
+                    <p>Este es un componente de Amado</p>
+                `;
+            }
+        }
+        customElements.define('mi-elemento', MiElemento);
+    </script>
+</head>
+<body>
+    <mi-elemento></mi-elemento>
+    <h1>Hola Mundo</h1>
+    <mi-elemento></mi-elemento>
+</body>
+</html>
