@@ -8,7 +8,7 @@ class Noticia extends HTMLElement {
         class="noticia_img">
       <img 
       src="${this.attributes.image_source.value}"
-      alt="">
+      alt="${this.attributes.image_alt.value}">
       </div>
       <div 
         class="noticia_cuerpo">
