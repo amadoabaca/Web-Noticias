@@ -3,12 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const keyword = 'technology';
     const language = 'es';
 
-    const url = `https://newsapi.org/v2/everything?q=tesla&from=2024-04-03&sortBy=publishedAt&apiKey=ffc6693f2c1a4dccadbbb259a54dd21b`
+    const url = `https://newsapi.org/v2/everything?q=tesla&sortBy=publishedAt&apiKey=ffc6693f2c1a4dccadbbb259a54dd21b`
 
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            //parece que no trae ningun dato amado capaz esta mal la url
             console.log(data);
             const secNoticias = document.querySelector('div.noticias');
 
@@ -24,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 secNoticias.appendChild(noticia);
                 
-
+        
                 /*const noti2 = document.createElement('my-news');
                 noti2.classList.add('noticia');
                 noti2.setAttribute('image_source', 'assets/img.png');
@@ -32,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 noti2.setAttribute('cuerpo', element.body);*/
 
                 //AGREGAMOS AL CONTENEDOR CADA NOTICIA
-                secNoticias.appendChild(noti2);
+                //secNoticias.appendChild(noti2);
             });                
  
         })
