@@ -3,14 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const keyword = 'technology';
     const language = 'es';
 
-    const url = `https://newsapi.org/v2/everything?q=Argentina&language=es&sortBy=publishedAt&apiKey=ffc6693f2c1a4dccadbbb259a54dd21b`
-
-    let urlWeather = `http://api.weatherapi.com/v1/current.json?q=Venado&lang=es&days=5&key=867014d98631456eb4b91249241305`
-    //Documentacion:
-    //https://app.swaggerhub.com/apis-docs/WeatherAPI.com/WeatherAPI/1.0.2#/APIs/realtime-weather 
-
-
-
+    const url = `https://newsapi.org/v2/everything?q=${keyword}&language=${language}&sortBy=publishedAt&apiKey=${apiKey}`;
 
     fetch(url)
     .then(response => response.json())
@@ -36,6 +29,14 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(error => console.error('Error:', error));
 
     //-------------------- LLAMADA A LA API DEL CLIMA --------------------
+    const keyWeather = '867014d98631456eb4b91249241305'
+    const locationCity = 'Venado';//se puede obtener desde la ubicacion fisica del equipo
+    const limitDays = '5';
+
+    const urlWeather = `http://api.weatherapi.com/v1/current.json?q=${locationCity}&lang=${language}&days=${limitDays}&key=${keyWeather}`
+    //Documentacion:
+    //https://app.swaggerhub.com/apis-docs/WeatherAPI.com/WeatherAPI/1.0.2#/APIs/realtime-weather 
+
 
     fetch(urlWeather)
     .then(response => response.json())
