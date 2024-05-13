@@ -5,12 +5,12 @@ class Clima extends HTMLElement {
   
     connectedCallback() {   
        this.innerHTML = `       
-        <div class="iconoClima">
+        <div class="climaComponent">
             <img src="${this.attributes.condition_icon.value}" alt="${this.attributes.text.value}"/>
             <div class="">${this.attributes.text.value}</div>
             <div class="">Ciudad: ${this.attributes.location.value}</div>
-            <div class="">T.: ${this.attributes.temp_c.value} ºC</div>
-            <div class="">Hum.:${this.attributes.humidity.value} %</div>
+            <div class="">Temperatura: ${this.attributes.temp_c.value} ºC</div>
+            <div class="">Humedad:${this.attributes.humidity.value} %</div>
             <div class="">Viento: ${this.attributes.viento.value} Kmh.</div>
         </div>
         `

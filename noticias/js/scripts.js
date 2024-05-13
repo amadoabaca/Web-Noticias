@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const url = `https://newsapi.org/v2/everything?q=Argentina&language=es&sortBy=publishedAt&apiKey=ffc6693f2c1a4dccadbbb259a54dd21b`
 
     let urlWeather = `http://api.weatherapi.com/v1/current.json?q=Venado&lang=es&days=5&key=867014d98631456eb4b91249241305`
+    //Documentacion:
+    //https://app.swaggerhub.com/apis-docs/WeatherAPI.com/WeatherAPI/1.0.2#/APIs/realtime-weather 
 
 
 
@@ -32,6 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     })
     .catch(error => console.error('Error:', error));
+
+    //-------------------- LLAMADA A LA API DEL CLIMA --------------------
 
     fetch(urlWeather)
     .then(response => response.json())

@@ -1,0 +1,7 @@
+.climaComponent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(85, 79, 79) !important;
+}
