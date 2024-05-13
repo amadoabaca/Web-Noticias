@@ -3,38 +3,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const keyword = 'technology';
     const language = 'es';
 
-    const url = `https://newsapi.org/v2/everything?q=tesla&sortBy=publishedAt&apiKey=ffc6693f2c1a4dccadbbb259a54dd21b`
+    let url = `https://newsapi.org/v2/everything?q=Argentina&lan=es&sortBy=publishedAt&apiKey=ffc6693f2c1a4dccadbbb259a54dd21b`
+
+
+
 
     fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            const secNoticias = document.querySelector('div.noticias');
-
-            // Itera no mas de 15 veces en la cantidad de articulos
-            data.articles.slice(0,15).forEach(article => {
-                //MODIFICADO AHORA LLAMAMOS SOLO UN WEBCOMPONENT 'my-news' Y CAMBIAMOS EL VALOR DE LOS ATRIBUTOS
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        const secNoticias = document.querySelector('div.noticias');
+        // Itera no mas de 15 veces en la cantidad de articulos
+        data.articles.slice(0,15).forEach(article => {            
+            if(article.urlToImage != null){
                 const noticia = document.createElement('my-news');
                 noticia.classList.add('noticia');
+                //MODIFICADO AHORA LLAMAMOS SOLO UN WEBCOMPONENT 'my-news' Y CAMBIAMOS EL VALOR DE LOS ATRIBUTOS                
                 noticia.setAttribute('image_source', article.urlToImage);
                 noticia.setAttribute('image_alt', article.title);
                 noticia.setAttribute('titulo', article.title);
                 noticia.setAttribute('cuerpo', article.description);
-
+                noticia.setAttribute('publishedAt', article.publishedAt);
                 secNoticias.appendChild(noticia);
-                
-        
-                /*const noti2 = document.createElement('my-news');
-                noti2.classList.add('noticia');
-                noti2.setAttribute('image_source', 'assets/img.png');
-                noti2.setAttribute('titulo', element.title);
-                noti2.setAttribute('cuerpo', element.body);*/
+            }          
 
-                //AGREGAMOS AL CONTENEDOR CADA NOTICIA
-                //secNoticias.appendChild(noti2);
-            });                
- 
-        })
-        .catch(error => console.error('Error:', error));
+        });                
+
+    })
+    .catch(error => console.error('Error:', error));
     
 });

@@ -15,6 +15,7 @@ class Noticia extends HTMLElement {
         <h1 
           class="titulo_noticia">${this.attributes.titulo.value}</h1>
           <p>${this.attributes.cuerpo.value}</p>
+          <p>${this.attributes.publishedAt.value.split("T")[0]}</p>
       </div>`
   }
 
@@ -36,6 +37,13 @@ class Noticia extends HTMLElement {
   }
   get image_source() {
     return this.$image_source.innerHTML;
+  }
+
+  set publishedAt(value) {
+    this.$publishedAt.innerHTML = value;
+  }
+  get publishedAt() {
+    return this.$publishedAt.innerHTML;
   }
 }
 
