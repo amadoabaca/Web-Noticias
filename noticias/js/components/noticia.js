@@ -19,32 +19,6 @@ class Noticia extends HTMLElement {
       </div>`
   }
 
-  //getters y setters
-  set cuerpo(value) {
-    this.$cuerpo.innerHTML = value;
-  }
-  get titulo() {
-    return this.$cuerpo.innerHTML;
-  }
-  set titulo(value) {
-    this.$titulo.innerHTML = value;
-  }
-  get titulo() {
-    return this.$titulo.innerHTML;
-  }
-  set image_source(value) {
-    this.$image_source.innerHTML = value;
-  }
-  get image_source() {
-    return this.$image_source.innerHTML;
-  }
-
-  set publishedAt(value) {
-    this.$publishedAt.innerHTML = value;
-  }
-  get publishedAt() {
-    return this.$publishedAt.innerHTML;
-  }
 }
 
 window.customElements.define('my-news', Noticia);

@@ -175,3 +175,10 @@ header {
         font-size: 11px;
     }
 }
+
+.iconoClima{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
