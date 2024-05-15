@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
         const secNoticias = document.querySelector('div.noticias');
         // Itera no mas de 15 veces en la cantidad de articulos
-        data.articles.slice(0,15).forEach(article => {            
+        data.articles.forEach(article => {            
             if(article.urlToImage != null){
                 const noticia = document.createElement('my-news');
                 noticia.classList.add('noticia');
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const locationCity = 'Venado';//se puede obtener desde la ubicacion fisica del equipo
     const limitDays = '5';
 
-    const urlWeather = `http://api.weatherapi.com/v1/current.json?q=${locationCity}&lang=${language}&days=${limitDays}&key=${keyWeather}`
+    const urlWeather = `https://api.weatherapi.com/v1/current.json?q=${locationCity}&lang=${language}&days=${limitDays}&key=${keyWeather}`
     //Documentacion:
     //https://app.swaggerhub.com/apis-docs/WeatherAPI.com/WeatherAPI/1.0.2#/APIs/realtime-weather 
 
@@ -52,6 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         sectionClima.appendChild(clima);})
-    .catch(error => console.loog(error));
+    .catch(error => console.log(error));
     
 });
