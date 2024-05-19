@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
         const secNoticias = document.querySelector('div.noticias');
         // Itera no mas de 15 veces en la cantidad de articulos
-        data.articles.forEach(article => {            
+        data.articles.slice(0,15).forEach(article => {            
             if(article.urlToImage != null){
                 const noticia = document.createElement('my-news');
                 noticia.classList.add('noticia');
