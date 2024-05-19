@@ -34,3 +34,10 @@
         width: 180px;
     }
 }
+
+@media screen and (max-width: 550px) {
+
+    .clima{
+        margin-bottom: 30px;
+    }
+}
