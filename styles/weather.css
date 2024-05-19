@@ -1,12 +1,12 @@
-.climaComponent{
+.climaComponent {
     display: flex;
-    margin-top: 30px;
     flex-direction: column;
     flex-wrap: nowrap;
     background-color: rgb(32, 33, 36);
-    width: 250px;
+    width: 150;
     padding: 16px;
     border-radius: 16px;
+    margin-right: 15px;
 }
 .location{
     font-size: 18px;
