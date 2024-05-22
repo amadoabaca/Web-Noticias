@@ -16,12 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.json())
         .then(data => {
             const secNoticias = document.querySelector('div.noticias');
-            // Itera no mas de 15 veces en la cantidad de articulos
             data.articles.slice(0,15).forEach(article => {            
                 if(article.urlToImage != null){
                     const noticia = document.createElement('my-news');
-                    noticia.classList.add('noticia');
-                    //MODIFICADO AHORA LLAMAMOS SOLO UN WEBCOMPONENT 'my-news' Y CAMBIAMOS EL VALOR DE LOS ATRIBUTOS                
+                    noticia.classList.add('noticia');          
                     noticia.setAttribute('image_source', article.urlToImage);
                     noticia.setAttribute('image_alt', article.title);
                     noticia.setAttribute('titulo', article.title);
@@ -36,10 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(error => console.error('Error:', error));
     }
 
-
-    //-------------------- LLAMADA A LA API DEL CLIMA --------------------
     const keyWeather = '867014d98631456eb4b91249241305'
-    const locationCity = 'Venado';//se puede obtener desde la ubicacion fisica del equipo
+    const locationCity = 'Venado';
     const limitDays = '5';
 
     const urlWeather = `https://api.weatherapi.com/v1/current.json?q=${locationCity}&lang=${language}&days=${limitDays}&key=${keyWeather}`
